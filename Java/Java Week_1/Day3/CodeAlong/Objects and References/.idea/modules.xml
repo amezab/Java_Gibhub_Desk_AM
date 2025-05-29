@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Shopping Cart Enum Exe.iml" filepath="$PROJECT_DIR$/Shopping Cart Enum Exe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CarDealershipSystem.iml" filepath="$PROJECT_DIR$/CarDealershipSystem.iml" />
     </modules>
   </component>
 </project>
