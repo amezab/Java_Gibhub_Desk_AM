@@ -3,58 +3,53 @@
 public class Main {
     public static void main(String[] args) {
 
-        //*In the main method**, create **two Car objects**
 
-        Car Car1 = new Car(
-                "Toyota ",
-                "Corolla ",
-                2020);
-        Car Car2 = new Car(
-                "Ford ",
-                "Mustang ",
-                2022);
+        //Creating a Class and Instantiating Objects
+        // Part 1: Car Dealership System Objects created from class Car
+    Car car1 = new Car ("Toyota", "Corolla", 2020);
+    Car car2 = new Car ("Ford", "Mustang", 2022);
 
-        //Call displayInfo()` for each.
-        System.out.println("---My Car----");
-        Car1.displayInfo();
-        System.out.println(("---Your Car---"));
-        Car2.displayInfo();
+    // call displayInfo()` for each Car
+    car1.displayInfo(1);
+    car2.displayInfo(2);
 
+    //Part 2: Reference Types and Object Behavior
         //Scenario: Book Library System
-        // create **two book objects**
-        Book Book1 = new Book(
-                " The Hobbit ",
-                "by J.R.R.",
-                "Tolkien"
-        );
-        Book Book2 = new Book(
-                " The Hobbit ",
-                "by J.R.R.",
-                "Tolkien"
-        );
 
-        //Call displayInfo()` for each
-        System.out.println("Book: ");
-        Book1.borrowBook();
 
-        //Shared Account Reference
+     Book book1 = new Book("The Hobbit ", "J.R.R. ", " ");
+     Book book2 = new Book("The Hobbit ", "J.R.R. ", " ");
+     book1.borrowBook();
+     book2.borrowBook();
 
-        BankAccount acc1 = new BankAccount("a", 1000.00);
-        BankAccount acc2 = acc1; //
+//Part 3: Reference Assignment and Behavior
+// Shared Account Reference
 
-        System.out.println("Initial Balance (acc1): $" + String.format("%.1f", acc1.balance));
+     BankAccount acc1 = new BankAccount("acc1", 1000.0);
+     System.out.println("Initial Balance (" + acc1.getOwner() + "): $" + acc1.getBalance());
 
-        System.out.println("Depositing $500 to acc2...");
+     BankAccount acc2 = acc1;
+     System.out.println("Depositing $500 to acc2...");
 
-        acc2.balance = 1500.00; //
+     acc1.deposit(500.0);
 
-        System.out.println("Updated Balance (acc1): $" + String.format("%.1f", acc1.balance)); // Using %.1f to match previous output
+//Part 4: Using Static Members
+        //Scenario: Tracking Total Employees in a Company
+// create three employees and print totalEmployees.
+    Employee employee1 = new Employee("Jose");
+    Employee employee2 = new Employee("Pedro");
+    Employee employee3 = new Employee("Juan");
+        System.out.println("Total Employees: "+ Employee.totalEmployees);
 
-        Employee emp1 = new Employee("Alice", 101);
-        Employee emp2 = new Employee("Bob", 102);
-        Employee emp3 = new Employee("Charlie", 103);
 
-        System.out.println("Final total employees: " + Employee.totalEmployees);
+
+
+
+
+
+
+
+
+
     }
 }
-

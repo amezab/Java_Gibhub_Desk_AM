@@ -1,23 +1,30 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-//Create enums for order status and shipping status.
-        enum OrderStatus {
-            PENDING,
-            PROCESSING,
-            SHIPPED,
-            DELIVERED
-        }
+    //Create enums for order status and shipping status.
+    enum OrderStatus {
+        PENDING,
+        PROCESSING,
+        SHIPPED,
+        DELIVERED
+    }
 
-        enum ShippingStatus {
-            STANDARD,
-            _2_DAY,
-            OVERNIGHT
-        }
+    enum ShippingStatus {
+        STANDARD,
+        _2_DAY,
+        OVERNIGHT
+    }
 
     public static void main(String[] args) {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
+
+        //Biz Name
+        String bizName = "========The Shopping Cart App=======";
+        String contactInfo = "========Contact us";
+        String itemDescription = "========A command-line shopping cart application built with Java";
+        System.out.println(bizName + "\n"+ contactInfo + "\n" + itemDescription + "\n");
+
 
 
         int productID = 1;
