@@ -34,6 +34,12 @@ public class Main {
         double productCost = 0.00;
         double productPrice = 4.99;
         int productQuantity = 78;
+        double totalCost = productPrice * productQuantity;
+
+        System.out.println("Product Price: " + productPrice);
+        System.out.println("Product Quantity: " + productQuantity);
+        System.out.println("Total Cost: " + totalCost);
+
 
         double taxRate = .07;
         double hundredDollarDiscount = .05;
@@ -48,27 +54,28 @@ public class Main {
         //Shopping Cart Console IO
         System.out.println("Are you tax-exempt? (y/n)");
         String taxExempt = console.nextLine();
+
+        // Prompt for shipping
         System.out.println("Shipping? (standard / overnight/ two-day)");
         String shipping = console.nextLine();
+
+
         System.out.println("Order quantity?");
-        int quantity = console.nextInt();
+        int orderQuantity = Integer.parseInt(console.nextLine());
         System.out.println("Promo code for free shipping?");
         String promoCode = console.nextLine();
 
-        System.out.println("Details: ");
+        System.out.println("\nDetails:");
         System.out.println("Tax-Exempt: " + taxExempt);
         System.out.println("Shipping: " + shipping);
-        System.out.println("Order quantity : " + quantity);
+        System.out.println("Order quantity: " + orderQuantity);
         System.out.println("Promo Code: " + promoCode);
+        System.out.println("Bye");
 
         double totalCostProduct = productQuantity * productCost;
         System.out.println("Total Cost Product: $" + totalCostProduct);
         double profitPerProduct = productPrice - productCost;
         System.out.println("Profit in dollars: " + profitPerProduct);
-        //3. Write code to calculate the profit margin of the product. Print the value.
-        /*double profitMargin = ((productPrice - productCost) / productPrice) * 100;
-        System.out.println("Profit Margin: $" + String.format("%.2f", profitMargin));
-        //4. Write code to calculate the total potential profit. Print the value.*/
         double potentialProfit = ((productQuantity * productPrice) - (productQuantity * productCost));
         System.out.println("Total Potential Profit: $" + String.format("%.2f", potentialProfit));
 
