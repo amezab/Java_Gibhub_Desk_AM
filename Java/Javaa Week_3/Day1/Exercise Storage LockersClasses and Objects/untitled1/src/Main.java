@@ -35,6 +35,7 @@ public class Main {
                 case "3":
                     System.out.println("Enter locker ID to store Item: ");
                     String storeItem = scanner.nextLine();
+
                     Locker lockertoStore = (Locker) manager.getLocker(storeItem);
                     if (lockertoStore != null) { //Check if the locker was actually found
                         System.out.println("Enter Item to store: ");
