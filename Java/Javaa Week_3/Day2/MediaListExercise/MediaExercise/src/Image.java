@@ -8,21 +8,21 @@ public class Image extends Media{
         this.fileFormat = imgFormat;
     }
 
-    public String getImgDimensions() {
-        return imgDimensions;
-    }
-
-    public void setImgDimensions(String imgDimensions) {
-        this.imgDimensions = imgDimensions;
-    }
-
-    public String getImgFormat() {
-        return fileFormat;
-    }
-
-    public void setImgFormat(String imgFormat) {
-        this.fileFormat = imgFormat;
-    }
+//    public String getImgDimensions() {
+//        return imgDimensions;
+//    }
+//
+//    public void setImgDimensions(String imgDimensions) {
+//        this.imgDimensions = imgDimensions;
+//    }
+//
+//    public String getImgFormat() {
+//        return fileFormat;
+//    }
+//
+//    public void setImgFormat(String imgFormat) {
+//        this.fileFormat = imgFormat;
+//    }
 
     @Override
     public void setName(String name) {

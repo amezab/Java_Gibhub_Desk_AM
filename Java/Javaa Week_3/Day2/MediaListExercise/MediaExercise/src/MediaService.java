@@ -1,18 +1,38 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class MediaService {
     private ArrayList<Media> mediaArrayList;
 
-    public MediaService(ArrayList<Media> mediaArrayList) {
-        this.mediaArrayList = mediaArrayList;
-
+    public MediaService() {
+        this.mediaArrayList = new ArrayList<>();//constructor for the arraylist
     }
 
     public void addMedia(Media media){
-        System.out.println("Media has been added");
-        return;
+        //Using the add method adds the media object to the list
+       this.mediaArrayList.add(media);
+
     }
-     void removeMedia(String name){
-        return ;
-     }
+
+    public boolean removeMedia(String name){
+        return false;
+    }
+
+    public Media findMediaByName(String name){
+       return null;
+
+    }
+
+    public List<Media> getAllMedia(){
+        return new ArrayList<>(this.mediaArrayList);
+    }
+
+    public int getMediacount(){
+        return 0;
+    }
+
+    public boolean isEmpty(){
+        return false;
+
+    }
 }
