@@ -1,3 +1,5 @@
+package com.medialist.model;
+
 public class Image extends Media{
     private String imgDimensions;
     private String fileFormat;
@@ -36,6 +38,6 @@ public class Image extends Media{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Image '" + getName() + "' - dimensions " + imgDimensions + " file type " + fileFormat;
     }
 }

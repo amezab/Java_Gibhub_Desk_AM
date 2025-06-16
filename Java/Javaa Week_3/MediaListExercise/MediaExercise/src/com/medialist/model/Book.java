@@ -1,3 +1,5 @@
+package com.medialist.model;
+
 public class Book extends Media{
     private  String bookAuthor;
     private int numberOfPages;
@@ -31,6 +33,6 @@ public class Book extends Media{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Book '" + getName() + "' - 'Author " + bookAuthor + " number of pages " + numberOfPages;
     }
 }

@@ -1,9 +1,7 @@
+package com.medialist.model;
 public abstract class Media {
     protected String name;
 
-    public Media(String name) {
-        this.name = name;
-    }
     public Media(String name) {
         this.name = name;
     }

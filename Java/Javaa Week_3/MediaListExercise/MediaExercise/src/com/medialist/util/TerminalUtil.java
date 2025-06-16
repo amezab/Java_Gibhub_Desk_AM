@@ -1,14 +1,17 @@
+package com.medialist.util;
+import java.util.List;
 import java.util.Scanner;
+import com.medialist.model.Media;
+
 
 public class TerminalUtil {
+    private Scanner scanner; //
 
-    private Scanner scanner = new Scanner(System.in);
-
-    public TerminalUtil(Scanner scanner) {
-        this.scanner = scanner;
+    public TerminalUtil() { //
+        this.scanner = new Scanner(System.in); // Initializing the scanner inside the constructor
     }
 
-    public int displayMenu(){
+    public void displayMenu(){
         System.out.println("=== Media List Application ===");
         System.out.println("=== ====================== ===");
         System.out.println("1. Add Media");
@@ -16,10 +19,8 @@ public class TerminalUtil {
         System.out.println("3. Play Media");
         System.out.println("4. List All Media");
         System.out.println("5. Quit");
-        System.out.println("Chose an option: ");
+        System.out.print("Chose an option: ");
 
-
-        return 0;
     }
     //Job is to display the message to the user
     public void displayMessage(String message){
@@ -27,7 +28,7 @@ public class TerminalUtil {
     }
     //Prompts the user with a given message and reads their String input from the console.
     public String getString(String prompt) {
-        System.out.println("Placeholder " + prompt);//Displays the prompt passed into the method
+        System.out.println(prompt);//Displays the prompt passed into the method
         return this.scanner.nextLine();// Reads and returns the user's input
 
     }
@@ -41,7 +42,7 @@ public class TerminalUtil {
                 return value;
             }catch (Exception ex){
                 System.out.println("That's not a valid entry");
-                System.out.println("Placeholder " + ex.getMessage());
+                System.out.println(ex.getMessage());
                 this.scanner.nextLine();
             }
 
@@ -60,6 +61,22 @@ public class TerminalUtil {
         } while (userChoice > 5 || userChoice < 0 );
         return userChoice;
     }
+
+    public void displayMediaList(List<Media> mediaList) {
+        if (mediaList == null || mediaList.isEmpty()) {
+            displayMessage("There is nothing to show.");
+            return;
+        }
+
+        displayMessage("\n--- All media files in Library---");
+        for (int i = 0; i < mediaList.size(); i++) {
+            Media media = mediaList.get(i);
+            displayMessage((i + 1) + ". " + media.getName()); // Shows number and name
+            displayMessage("   Description " + media.getDescription()); // Shows full description
+        }
+        displayMessage("----------------------------------------");
+    }
+
 
 
 

@@ -1,5 +1,7 @@
+package com.medialist.service;
 import java.util.ArrayList;
 import java.util.List;
+import com.medialist.model.Media;
 
 public class MediaService {
     private ArrayList<Media> mediaArrayList;

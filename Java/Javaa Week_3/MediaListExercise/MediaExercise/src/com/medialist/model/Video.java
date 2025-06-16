@@ -1,3 +1,5 @@
+package com.medialist.model;
+
 public class Video extends Media{
 
     private int durationMinutes;
@@ -28,11 +30,11 @@ public class Video extends Media{
 
     @Override
     public void play(){
-        System.out.println();
+        System.out.println("Playing video '" + getName());
     }
 
     @Override
     public String getDescription() {
-        return "";
+        return "Video '" + getName() + "' - Duration: " + durationMinutes + " minutes, resolution: " + videoResolution;
     }
 }

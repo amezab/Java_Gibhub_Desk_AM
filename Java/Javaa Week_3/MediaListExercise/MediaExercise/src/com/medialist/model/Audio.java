@@ -1,3 +1,5 @@
+package com.medialist.model;
+
 public class Audio extends Media{
     private int durationInMinutes;
     private String artistName;
@@ -33,6 +35,6 @@ public class Audio extends Media{
 
     @Override
     public String getDescription() {
-        return "";
+        return "Audio '" + getName() + "' - Duration: " + durationInMinutes + " minutes " + artistName;
     }
 }
