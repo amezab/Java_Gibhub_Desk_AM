@@ -9,24 +9,26 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class SpellBook {
-    private ArrayList<Spell> spells = new ArrayList<>();//Declares the array list of spells
+    //Declares the array list of spells
+    private ArrayList<Spell> spells = new ArrayList<>();
 
     //constructor class
     public SpellBook() {
         //Populates the spellbook with at least 4 implementations of different spells
-       spells.add(new ExitSpell());
-       spells.add(new FireballSpell());
-       spells.add(new HealingSpell());
-       spells.add(new TeleportSpell());
+        spells.add(new ExitSpell());
+        spells.add(new FireballSpell());
+        spells.add(new HealingSpell());
+        spells.add(new TeleportSpell());
     }
 
-    public void tryIncantation(String incantation){
+    public void tryIncantation(String incantation) {
         for (Spell currentSpell : this.spells) {
-            if (Objects.equals(incantation, currentSpell.getIncantation()));
-            
-            System.out.println();
-            return;
-        }
+            if (incantation.equalsIgnoreCase(currentSpell.getIncantation())) {
+            //if (Objects.equals(incantation, currentSpell.getIncantation())) {
+                currentSpell.cast();
+                return;
+            }
+        }System.out.println("The spell fizzled out! Try again.");
     }
 }
 

@@ -9,6 +9,6 @@ public class HealingSpell implements Spell {
 
     @Override
     public String getIncantation() {
-        return "Healing...";
+        return "Healing";
     }
 }
