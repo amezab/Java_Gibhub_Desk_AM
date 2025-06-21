@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Models;
 
 // Declare the private fields to hold the data.
 //Applying Encapsulation
@@ -27,7 +27,7 @@ public class Item {
     public double getPrice() {
         return price;
     }
-
+    //Safely changing a private field, including validation logic
     public void setQuantity(int newQuantity) {
         /* Security check to make sure an item is not 0 */
         if (newQuantity >= 0){
