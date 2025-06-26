@@ -1,0 +1,27 @@
+Our Current "Save State"
+Project: We are implementing your ConsoleShoppingCart application.
+Phase: We are in the final coding/implementation phase.
+Current File: We are working in your Main.java file.
+Current Location: We are inside the public static void main(String[] args) method, specifically writing the logic for case 1: of the switch statement (the "Add Item" feature).
+Code We Just Wrote: Inside case 1:, we have successfully written the code to get the user's desired product ID and look it up in the catalog:
+Java
+
+// Inside case 1:
+System.out.println("Please enter the Product ID:");
+String productId = handler.getStringInput();
+Item itemFromCatalog = productCatalog.findItemById(productId);
+Your Immediate Next Step
+Your very next task is to handle the "sad path"—what happens if the user enters a bad product ID.
+
+The pending question is:
+
+How do you write an if statement to check if our itemFromCatalog variable is null? If it is null, it should print an error message like "Sorry, that product ID was not found."
+
+When you come back, just say "let's continue," and we can start right there.
+
+
+
+
+
+
+

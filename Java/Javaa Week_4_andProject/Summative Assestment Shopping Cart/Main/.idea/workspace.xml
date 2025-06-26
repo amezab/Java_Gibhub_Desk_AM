@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9815438-0c80-401d-947c-fac8d9105bcb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/.idea/Exercise Storage LockersClasses and Objects.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled/untitled.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled1/src/Locker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled1/src/LockerManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled1/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/Exercise Storage LockersClasses and Objects/untitled1/untitled1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/MediaExercise.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/app/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/command/AddMediaCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/command/ListAllMediaCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/command/PlayMediaCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/command/RemoveMediaCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/model/Audio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/model/Image.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/model/Media.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/model/Video.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/service/MediaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaExercise/src/com/medialist/util/TerminalUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/MediaListExercise/MediaListExercise.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/src/main/java/com/spellbook/app/SpellBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/src/main/java/com/spellbook/app/SpellBookJava.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/src/main/java/com/spellbook/core/Spell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/src/main/java/com/spellbook/spells/ExitSpell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/src/main/java/com/spellbook/spells/FireballSpell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/src/main/java/com/spellbook/spells/HealingSpell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Javaa Week_3/SpellBookExercise/SpellBookEx/src/main/java/com/spellbook/spells/TeleportSpell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Maven and Testing/TDDKata/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Maven and Testing/TDDKata/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Maven and Testing/TDDKata/.mvn/jvm.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Maven and Testing/TDDKata/.mvn/maven.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Maven and Testing/TDDKata/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Maven and Testing/TDDKata/src/main/java/org/example/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Maven and Testing/TDDKata/src/main/java/org/example/StringCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Maven and Testing/TDDKata/src/test/java/org/example/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Summative Assestment Shopping Cart.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Models/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Services/CartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/utils/UserInputHandler.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2ykDbEc7PJUYTnAQ29Vh0HcOKX7" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.UserInputHandlerTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserInputHandlerTest.getIntegerInput_WhenGivenValidNumber_ReturnsThatNumber (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserInputHandlerTest.getIntegerInput_WhenGivenValidNumber_ReturnsThatNumber.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Angel Meza/Desktop/Java_Gibhub_Desk_AM/Java/Javaa Week_4_andProject/Summative Assestment Shopping Cart/Main/src/main/java/org/example/Main.java&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.UserInputHandlerTest">
+    <configuration name="UserInputHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="utils" />
+      <option name="MAIN_CLASS_NAME" value="utils.UserInputHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserInputHandlerTest.getIntegerInput_WhenGivenValidNumber_ReturnsThatNumber (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.utils" />
+      <option name="MAIN_CLASS_NAME" value="org.example.utils.UserInputHandlerTest" />
+      <option name="METHOD_NAME" value="getIntegerInput_WhenGivenValidNumber_ReturnsThatNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserInputHandlerTest.getIntegerInput_WhenGivenValidNumber_ReturnsThatNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="utils" />
+      <option name="MAIN_CLASS_NAME" value="utils.UserInputHandlerTest" />
+      <option name="METHOD_NAME" value="getIntegerInput_WhenGivenValidNumber_ReturnsThatNumber" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserInputHandlerTest" />
+        <item itemvalue="JUnit.UserInputHandlerTest.getIntegerInput_WhenGivenValidNumber_ReturnsThatNumber" />
+        <item itemvalue="JUnit.UserInputHandlerTest.getIntegerInput_WhenGivenValidNumber_ReturnsThatNumber (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9815438-0c80-401d-947c-fac8d9105bcb" name="Changes" comment="" />
+      <created>1750369748567</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1750369748567</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/App/Main.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
