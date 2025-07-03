@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d1363b5c-ca67-422b-be46-99eca6e033e7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Javaa Week_3/Exercise Storage LockersClasses and Objects/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Javaa Week_3/Exercise Storage LockersClasses and Objects/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Javaa Week_4/Maven and Testing/TDDKata/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Javaa Week_4/Maven and Testing/TDDKata/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Javaa Week_4/Maven and Testing/TDDKata/.mvn/jvm.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Javaa Week_4/Maven and Testing/TDDKata/.mvn/maven.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Javaa Week_4/Maven and Testing/TDDKata/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Javaa Week_4/Maven and Testing/TDDKata/src/main/java/org/example/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Javaa Week_4/Maven and Testing/TDDKata/src/main/java/org/example/StringCalculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Javaa Week_4/Maven and Testing/TDDKata/src/test/java/org/example/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,26 +15,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2ykDSYr6oI45gxwy8J3GmqJZp4W" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Angel Meza/Desktop/Java_Gibhub_Desk_AM/Java/Javaa Week_4_andProject/Summative Assestment Shopping Cart",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Angel Meza/Desktop/Java_Gibhub_Desk_AM/Java/Java Week_4_andProject/Summative Assestment Shopping Cart&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="d1363b5c-ca67-422b-be46-99eca6e033e7" name="Changes" comment="" />
