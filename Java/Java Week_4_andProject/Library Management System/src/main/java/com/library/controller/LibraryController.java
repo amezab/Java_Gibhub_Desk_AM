@@ -16,8 +16,8 @@ public class LibraryController {
     public void run() {
         while (true) {
             bookOperationsUI.displayMenu();
-            int choice = userIO.readInt("Select [0-4]:", 0, 4);
-
+            int choice = userIO.readInt("Select [0-4]: ", 0, 4);
+            //Maybe a choice to display whats currently on file?
             switch (choice) {
                 case 1:
                     bookOperationsUI.bookToFind();

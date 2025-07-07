@@ -1,14 +1,17 @@
 package com.library.data;
 
 import com.library.model.Book;
-
 import java.util.List;
 
 public interface BookRepository {
-    Book findBookByIsbn(String isbn);
-    List<Book> findAllBooks();
-    Book addBook(Book addBook);
-    Book updateBook(Book updateBook);
-    Boolean deleteBookByIsbn(String isbn);
 
+    Book findBookByIsbn(String isbn) throws DataPersistenceException;
+
+    List<Book> findAllBooks() throws DataPersistenceException;
+
+    Book addBook(Book book) throws DataPersistenceException;
+
+    Book updateBook(Book book) throws DataPersistenceException;
+
+    Book removeBook(String isbn) throws DataPersistenceException;
 }

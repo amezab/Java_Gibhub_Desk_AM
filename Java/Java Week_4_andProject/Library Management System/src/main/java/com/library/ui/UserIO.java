@@ -5,21 +5,31 @@ import java.util.Scanner;
 public class UserIO {
     private final Scanner scanner = new Scanner(System.in);
 
-    public UserIO() {
+    // Use this method when the input CANNOT be empty.
+    public String readRequiredString(String prompt) {
+        while (true) {
+            System.out.println(prompt);
+            String userInput = this.scanner.nextLine();
+            if (!userInput.trim().isEmpty()) {
+                return userInput;
+            }
+            System.out.println("[Err] Input cannot be blank.");
+        }
     }
 
+    // Use this method when the input CAN be empty (for the update feature).
+    // In UserIO.java
     public String readString(String prompt) {
-        System.out.println(prompt);
-        String userInput = scanner.nextLine();
-        return userInput;
+        System.out.print(prompt);
+        return this.scanner.nextLine();
     }
 
-    // Base method to read any integer
+    // Use this method to read any integer.
     public int readInt(String prompt) {
         while (true) {
             try {
                 System.out.print(prompt);
-                String input = scanner.nextLine();
+                String input = this.scanner.nextLine();
                 return Integer.parseInt(input.trim());
             } catch (NumberFormatException e) {
                 System.out.println("[Err] Please enter a valid number.");
@@ -27,15 +37,14 @@ public class UserIO {
         }
     }
 
-    // Overloaded method to read integer within a range
+    // Use this method to read an integer within a specific range.
     public int readInt(String prompt, int min, int max) {
         while (true) {
-            int result = readInt(prompt); // Call the base readInt() method (no infinite recursion)
+            int result = readInt(prompt);
             if (result >= min && result <= max) {
                 return result;
-            } else {
-                readString(String.format("[Err] Please enter a number between %s and %s. Press [Enter] to continue.", min, max));
             }
+            System.out.println("[Err] Please enter a number between " + min + " and " + max + ".");
         }
     }
 }

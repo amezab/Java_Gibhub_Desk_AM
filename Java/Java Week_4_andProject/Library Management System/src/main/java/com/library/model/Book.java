@@ -11,6 +11,7 @@ public class Book {
     private Year yearPublished;
     private String author;
     private String isbn;
+    //name?
     //private String title;
 
     public Book(String category, int shelfNumber, int position, Year yearPublished, String author, String isbn) {
@@ -26,39 +27,30 @@ public class Book {
     public String getCategory() {
         return category;
     }
-
     public void setCategory(String category) {
         this.category = category;
     }
-
     public int getShelfNumber() {
         return shelfNumber;
     }
-
-    public void setShelfNumber(int shelfNumber) {
-        this.shelfNumber = shelfNumber;
-    }
-
+   public void setShelfNumber(int shelfNumber) {
+       this.shelfNumber = shelfNumber;
+   }
     public int getPosition() {
         return position;
     }
-
-    public void setPosition(int position) {
+   public void setPosition(int position) {
         this.position = position;
     }
-
     public Year getYearPublished() {
         return yearPublished;
     }
-
     public void setYearPublished(Year yearPublished) {
         this.yearPublished = yearPublished;
     }
-
     public String getAuthor() {
         return author;
     }
-
     public void setAuthor(String author) {
         this.author = author;
     }

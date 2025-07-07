@@ -6,14 +6,15 @@ import java.io.*;
 import java.util.*;
 
 
-public class FileBookRepository implements BookRepository{
-    private final Map<String, Book> books ;
+public class FileBookRepository implements BookRepository {
+    // Initialize the map right here where it's declared
+    private final Map<String, Book> books = new HashMap<>();
     private final String filePath;
 
-    public FileBookRepository(String filePath) {
-        this.books = new HashMap<>();
+    // In FileBookRepository.java
+    public FileBookRepository(String filePath) throws DataPersistenceException {
         this.filePath = filePath;
-        loadFromFile();
+        this.loadFromFile();
     }
 
     @Override
@@ -43,9 +44,19 @@ public class FileBookRepository implements BookRepository{
     }
 
     @Override
-    public Boolean deleteBookByIsbn(String isbn) {
-        Book book = books.remove(isbn);
-        return !(book == null);
+    public Book removeBook(String isbn) throws DataPersistenceException {
+        // Step 1: Remove the book from the in-memory map.
+        // The .remove() method on a Map returns the value that was removed, or null if the key didn't exist.
+        Book removedBook = this.books.remove(isbn);
+
+        // Step 2: If a book was actually removed (i.e., it wasn't null), update the file.
+        if (removedBook != null) {
+            // We will update this method later to throw the exception properly.
+            this.writeToFile();
+        }
+
+        // Step 3: Return the book that was removed, or null if no book was found.
+        return removedBook;
     }
 
     private void writeToFile() {

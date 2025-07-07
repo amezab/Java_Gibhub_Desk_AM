@@ -7,6 +7,9 @@ import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 import com.library.service.exception.BookValidationException;
+// In BookServiceImpl.java, at the top
+import com.library.data.DataPersistenceException;
+
 
 public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
@@ -17,24 +20,24 @@ public class BookServiceImpl implements BookService {
         this.bookRepository = bookRepository;
     }
 
+    // In BookServiceImpl.java
+
     @Override
-    public Book addBook(Book book) throws BookValidationException {
+    public Book addBook(Book book) throws BookValidationException, DataPersistenceException {
         validateBook(book);
         if (bookRepository.findBookByIsbn(book.getIsbn()) != null) {
-            throw new BookValidationException("Book already exist");
+            throw new BookValidationException("Book already exists.");
         }
         return bookRepository.addBook(book);
     }
-//    @Override
-//    public List<Book> findAllBooks() {
-//        return bookRepository.findAllBooks();
-//    }
-    @Override
-    public List<Book> findBooksByCategory(String category) {
-        List<Book> allBooks = bookRepository.findAllBooks();
-        List<Book> results = new ArrayList<>();
 
-        for (Book book : allBooks) {
+    // In BookServiceImpl.java
+    @Override
+    public List<Book> findBooksByCategory(String category) throws DataPersistenceException {
+        List<Book> allBooks = this.bookRepository.findAllBooks();
+        List<Book> results = new ArrayList<>();
+        // ... rest of the method is the same
+        for(Book book : allBooks) {
             if (book.getCategory().equals(category)) {
                 results.add(book);
             }
@@ -43,20 +46,26 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public boolean removeBookByIsbn(String isbn) {
-        return false;
+    public boolean removeBookByIsbn(String isbn) throws DataPersistenceException {
+        // The repository's removeBook method will return the book if it was successfully removed,
+        // or null if no book with that ISBN was found.
+        Book removedBook = this.bookRepository.removeBook(isbn);
+
+        // Return true if a book was removed (removedBook is not null), and false otherwise.
+        return removedBook != null;
     }
 
+    // In BookServiceImpl.java
+
     @Override
-    public Book findBookByIsbn(String isbn) {
+    public Book findBookByIsbn(String isbn) throws DataPersistenceException {
         return bookRepository.findBookByIsbn(isbn);
     }
 
-
-
+    // In BookServiceImpl.java
 
     @Override
-    public Book updateBook(Book book) throws BookValidationException {
+    public Book updateBook(Book book) throws BookValidationException, DataPersistenceException {
         validateBook(book);
         if (bookRepository.findBookByIsbn(book.getIsbn()) == null) {
             throw new BookValidationException("Book with this ISBN does not exist.");
@@ -77,11 +86,11 @@ public class BookServiceImpl implements BookService {
         }
 
         if (book.getShelfNumber() < 1 || book.getShelfNumber() > MAX_SHELF_OR_POSITION ) {
-            throw new BookValidationException("Shelf Number must be between 1 and 250.");
+            throw new BookValidationException("Shelf Number must be between 1 and 250: ");
         }
 
         if (book.getPosition() < 1 || book.getPosition() > MAX_SHELF_OR_POSITION ) {
-            throw new BookValidationException("Position Number must be between 1 and 250.");
+            throw new BookValidationException("Position Number must be between 1 and 250: ");
         }
 
         if (book.getYearPublished().isAfter(Year.now())){
