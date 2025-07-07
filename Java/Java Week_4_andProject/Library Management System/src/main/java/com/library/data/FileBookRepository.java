@@ -28,53 +28,40 @@ public class FileBookRepository implements BookRepository {
     }
 
     @Override
-    public Book addBook(Book addBook) {
+    public Book addBook(Book addBook) throws DataPersistenceException {
         String key = addBook.getIsbn();
-        books.put(key, addBook);
-        writeToFile();
+        this.books.put(key, addBook);
+        this.writeToFile();
         return addBook;
     }
 
     @Override
-    public Book updateBook(Book updateBook) {
+    public Book updateBook(Book updateBook) throws DataPersistenceException {
         String key = updateBook.getIsbn();
-        books.put(key, updateBook);
-        writeToFile();
+        this.books.put(key, updateBook);
+        this.writeToFile();
         return updateBook;
     }
 
     @Override
     public Book removeBook(String isbn) throws DataPersistenceException {
-        // Step 1: Remove the book from the in-memory map.
-        // The .remove() method on a Map returns the value that was removed, or null if the key didn't exist.
         Book removedBook = this.books.remove(isbn);
-
-        // Step 2: If a book was actually removed (i.e., it wasn't null), update the file.
         if (removedBook != null) {
-            // We will update this method later to throw the exception properly.
             this.writeToFile();
         }
-
-        // Step 3: Return the book that was removed, or null if no book was found.
         return removedBook;
     }
 
-    private void writeToFile() {
-        try (PrintWriter writer = new PrintWriter(new FileWriter(filePath))) {
-            // Create an instance of our mapper tool
+    private void writeToFile() throws DataPersistenceException {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(this.filePath))) {
             BookMapper bookMapper = new BookMapper();
-
-            for (Book book : books.values()) {
-                // Use the mapper to convert the Book object to a String
+            for (Book book : this.books.values()) {
                 String bookAsText = bookMapper.marshall(book);
-
-                // Use the writer to print that String as a new line in the file
                 writer.println(bookAsText);
             }
-
         } catch (IOException e) {
-            // For now, we'll just print an error if something goes wrong
-            System.out.println("Error writing to file: " + e.getMessage());
+            // Catch the specific IO exception and wrap it in custom one
+            throw new DataPersistenceException("Could not save book data.", e);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.library.ui;
 
+import java.time.Year;
 import java.util.Scanner;
 
 public class UserIO {
@@ -18,8 +19,7 @@ public class UserIO {
     }
 
     // Use this method when the input CAN be empty (for the update feature).
-    // In UserIO.java
-    public String readString(String prompt) {
+       public String readString(String prompt) {
         System.out.print(prompt);
         return this.scanner.nextLine();
     }
@@ -45,6 +45,18 @@ public class UserIO {
                 return result;
             }
             System.out.println("[Err] Please enter a number between " + min + " and " + max + ".");
+        }
+    }
+
+    public Year readYear(String prompt) {
+        while (true) {
+            try {
+                // We use readRequiredString to make sure the input isn't blank
+                String input = this.readRequiredString(prompt);
+                return Year.parse(input);
+            } catch (java.time.format.DateTimeParseException e) {
+                System.out.println("[Err] Please enter a valid 4-digit year.");
+            }
         }
     }
 }

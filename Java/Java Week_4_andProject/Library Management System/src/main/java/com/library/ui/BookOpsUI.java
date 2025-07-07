@@ -4,12 +4,8 @@ import com.library.data.DataPersistenceException;
 import com.library.model.Book;
 import com.library.service.BookService;
 import com.library.service.exception.BookValidationException;
-
-
 import java.time.Year;
 import java.util.List;
-
-
 
 public class BookOpsUI {
     private final BookService bookService;
@@ -88,16 +84,17 @@ public class BookOpsUI {
                 bookToEdit.setAuthor(newAuthor);
             }
 
-            // Add setters for Shelf Number, Position, and Year to your Book model if they are missing.
-            // We will need to create a readYear method in UserIO for proper validation.
-            // For now, let's focus on text fields.
+            // Year
+            Year newYear = this.userIO.readYear("Year (" + bookToEdit.getYearPublished() + "): ");
+            bookToEdit.setYearPublished(newYear); // This assumes you have a setYearPublished method
 
             bookService.updateBook(bookToEdit);
+            System.out.println("[Success] Book updated.");
 
-// Create the specific identifier from the book's data
+            // Create the specific identifier from the book's data
             String bookIdentifier = bookToEdit.getCategory() + "-" + bookToEdit.getShelfNumber() + "-" + bookToEdit.getPosition();
 
-// Use the identifier to create the new, specific message
+            // Use the identifier to create the new, specific message
             System.out.print("[Success] ");
             System.out.printf(" \nBook %s has been updated.\n", bookIdentifier);
 
@@ -109,18 +106,31 @@ public class BookOpsUI {
 
     public void bookToAdd() {
         String categoryName = this.userIO.readRequiredString("Enter category name: ");
-        String author = this.userIO.readString("Enter Authors name: ");
-        String isbn = this.userIO.readString("Enter isbn: ");
-        int shelfNumber = this.userIO.readInt("Enter shelf number between: 1-250: ", 1, 250);
-        int positionNumber = this.userIO.readInt("Enter position number between: 1-250: ", 1, 250);
-        Year yearPublished = Year.parse(this.userIO.readString("Enter year published: "));
-        Book newBook = new Book(categoryName, shelfNumber, positionNumber, yearPublished, author, isbn);
+        String author = this.userIO.readRequiredString("Enter Author's name: ");
+        String isbn = this.userIO.readRequiredString("Enter ISBN: ");
+        int shelfNumber = this.userIO.readInt("Enter shelf number (1-250): ", 1, 250);
+        int positionNumber = this.userIO.readInt("Enter position number (1-250): ", 1, 250);
 
+        Year yearPublished;
+        // This loop will continue until a valid year is entered.
+        while (true) {
+            try {
+                yearPublished = this.userIO.readYear("Enter year published: ");
+                // Immediately validate the year using our new service method
+                this.bookService.validateYear(yearPublished);
+                break; // If validation passes, exit the loop
+            } catch (BookValidationException e) {
+                System.out.println(e.getMessage()); // Print the specific error and loop again
+            }
+        }
+
+        // Now that all data is valid, create and add the book
+        Book newBook = new Book(categoryName, shelfNumber, positionNumber, yearPublished, author, isbn);
         try {
             this.bookService.addBook(newBook);
-            System.out.println("[Success] ");
-            System.out.println("Book "+ categoryName + "-" + shelfNumber + "-" + positionNumber  + " added.");
+            System.out.println("[Success] Book " + categoryName + "-" + shelfNumber + "-" + positionNumber + " added.");
         } catch (BookValidationException | DataPersistenceException e) {
+            // This catch is still needed for other potential errors like a duplicate ISBN
             System.out.println("[Err] " + e.getMessage());
         }
     }
@@ -133,15 +143,10 @@ public class BookOpsUI {
             if (books.isEmpty()) {
                 System.out.println("No books found in category: " + categoryName);
             } else {
-                // --- Start of Changes ---
 
-                // 1. Print the simpler category header.
                 System.out.println("Books in " + categoryName);
-
-                // 2. Print the table column headers.
                 System.out.printf("%-5s %-5s %-6s %-20s %s\n", "Shelf", "Pos", "Year", "Author", "ISBN");
 
-                // 3. Loop through the books and print each one as a formatted row.
                 for (Book book : books) {
                     System.out.printf("%-5d %-5d %-6s %-20s %s\n",
                             book.getShelfNumber(),
@@ -150,7 +155,7 @@ public class BookOpsUI {
                             book.getAuthor(),
                             book.getIsbn());
                 }
-                // --- End of Changes ---
+
             }
         } catch (DataPersistenceException e) {
             System.out.println("[Err] " + e.getMessage());

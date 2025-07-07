@@ -2,7 +2,6 @@ package com.library.model;
 
 
 import java.time.Year;
-//POJO(Plain Old Java Object)
 public class Book {
     //Encapsulation.
     private String category;
@@ -11,8 +10,6 @@ public class Book {
     private Year yearPublished;
     private String author;
     private String isbn;
-    //name?
-    //private String title;
 
     public Book(String category, int shelfNumber, int position, Year yearPublished, String author, String isbn) {
         //Ensuring object is always created in a valid state.
@@ -30,9 +27,12 @@ public class Book {
     public void setCategory(String category) {
         this.category = category;
     }
+
     public int getShelfNumber() {
+
         return shelfNumber;
     }
+
    public void setShelfNumber(int shelfNumber) {
        this.shelfNumber = shelfNumber;
    }
