@@ -36,11 +36,10 @@ public class FileBookRepository implements BookRepository {
     }
 
     @Override
-    public Book updateBook(Book updateBook) throws DataPersistenceException {
+    public void updateBook(Book updateBook) throws DataPersistenceException {
         String key = updateBook.getIsbn();
         this.books.put(key, updateBook);
         this.writeToFile();
-        return updateBook;
     }
 
     @Override

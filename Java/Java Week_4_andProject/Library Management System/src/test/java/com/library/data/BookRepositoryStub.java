@@ -28,9 +28,8 @@ public class BookRepositoryStub implements BookRepository {
     }
 
     @Override
-    public Book updateBook(Book book) {
+    public void updateBook(Book book) {
         books.put(book.getIsbn(), book);
-        return book;
     }
 
     @Override

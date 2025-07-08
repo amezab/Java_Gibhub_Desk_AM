@@ -11,7 +11,7 @@ public interface BookRepository {
 
     Book addBook(Book book) throws DataPersistenceException;
 
-    Book updateBook(Book book) throws DataPersistenceException;
+    void updateBook(Book book) throws DataPersistenceException;
 
     Book removeBook(String isbn) throws DataPersistenceException;
 }
