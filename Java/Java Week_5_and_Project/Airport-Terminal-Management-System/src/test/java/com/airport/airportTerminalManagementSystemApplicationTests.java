@@ -1,10 +1,10 @@
-package com.example.Airport_Terminal_Management_System;
+package com.airport;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AirportTerminalManagementSystemApplicationTests {
+class airportTerminalManagementSystemApplicationTests {
 
 	@Test
 	void contextLoads() {

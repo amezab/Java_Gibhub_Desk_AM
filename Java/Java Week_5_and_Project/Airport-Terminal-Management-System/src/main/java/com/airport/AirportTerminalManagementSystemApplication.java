@@ -1,4 +1,4 @@
-package com.example.Airport_Terminal_Management_System;
+package com.airport;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
