@@ -1,0 +1,7 @@
+flightNumber,departureDate,ticketPrice,passengerName,passportNumber,aircraftModel,aircraftType
+AA101,2024-08-15,350.00,ERIC,E12345,Boeing 737,Commercial
+AA101,2024-08-15,350.00,ALA,A12345,Boeing 737,Commercial
+PJ007,2024-09-05,9500.00,MESSI,M2022,Gulfstream G650,PrivateJet
+AA101,2024-08-15,350.00,ANGEL,A54321,Boeing 737,Commercial
+AA101,2024-08-15,350.00,LOCO,L123456,Boeing 737,Commercial
+PJ007,2024-09-05,9500.00,CR7,C123456,Gulfstream G650,PrivateJet
