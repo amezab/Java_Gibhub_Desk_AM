@@ -1,3 +1,5 @@
+package com.airport;
+
 import com.airport.domain.model.Aircraft;
 import com.airport.domain.model.CommercialAircraft;
 import com.airport.domain.model.Flight;

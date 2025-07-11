@@ -19,10 +19,8 @@ public class CsvUtil {
     private final java.io.File csvFile;
 
     public CsvUtil() {
-        // This path creates a 'data' folder in the root of your project when you run it.
         String path = "data/reservations.csv";
         this.csvFile = new java.io.File(path);
-
     }
 
     public void saveReservation(Flight flight, Passenger passenger) {

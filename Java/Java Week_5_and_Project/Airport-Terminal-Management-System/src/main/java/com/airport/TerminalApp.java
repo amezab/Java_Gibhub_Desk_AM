@@ -47,37 +47,32 @@ public class TerminalApp implements CommandLineRunner {
 					flight.getTicketPrice(),
 					flight.getAircraft().getModel(),
 					flight.getAircraft().getClass().getSimpleName());
-		 }
+		}
 
 
+		System.out.println("\n--- Book a Flight ---");
+		System.out.print("Enter Flight Number: ");
+		String flightNumber = scanner.nextLine();
+		System.out.print("Enter Passenger Name: ");
+		String passengerName = scanner.nextLine();
+		System.out.print("Enter Passport Number: ");
+		String passportNumber = scanner.nextLine();
 
-			System.out.println("\n--- Book a Flight ---");
-			System.out.print("Enter Flight Number: ");
-			String flightNumber = scanner.nextLine();
-			System.out.print("Enter Passenger Name: ");
-			String passengerName = scanner.nextLine();
-			System.out.print("Enter Passport Number: ");
-			String passportNumber = scanner.nextLine();
+		Passenger passenger = new Passenger(passengerName, passportNumber);
 
-			Passenger passenger = new Passenger(passengerName, passportNumber);
+		try {
+			//Add the reservation to the live system
+			reservationSystem.addReservation(flightNumber, passenger);
+			//Get the full flight object to save it
+			Flight flight = flightRepository.findFlightByNumber(flightNumber);
+			//Save the new reservation to the CSV file
+			csvUtil.saveReservation(flight, passenger);
+			System.out.println("Reservation successful!");
 
-
-			try {
-				//Add the reservation to the live system
-				reservationSystem.addReservation(flightNumber, passenger);
-				//Get the full flight object to save it
-				Flight flight = flightRepository.findFlightByNumber(flightNumber);
-				//Save the new reservation to the CSV file
-				csvUtil.saveReservation(flight, passenger);
-				System.out.println("Reservation successful!");
-
-			} catch (IllegalArgumentException e) {
-				// Print the error message from the exception (e.g., e.getMessage())
-				System.out.println("Error: " + e.getMessage());
-			}
-
-
-
+		} catch (IllegalArgumentException e) {
+			// Print the error message from the exception (e.g., e.getMessage())
+			System.out.println("Error: " + e.getMessage());
+		}
 
 	}
 
