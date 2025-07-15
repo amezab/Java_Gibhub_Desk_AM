@@ -1,0 +1,4 @@
+Type,ID,Name,Quantity,Price,MinStock,ExpirationDate,DaysBeforeExp
+STANDARD,A1,Milk,70,4.99,5,,
+STANDARD,A2,Eggs,100,8.0,10,,
+STANDARD,A3,Bread,30,2.35,5,,
