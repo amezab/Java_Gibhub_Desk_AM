@@ -1,5 +1,6 @@
 package com.example.AppInventory.ui;
 
+import com.example.AppInventory.service.Inventory.InventoryOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -7,72 +8,74 @@ import org.springframework.stereotype.Component;
 public class MenuController {
 
     @Autowired
-    private com.example.AppInventory.ui.InventoryOperations inventoryOperations;
+    private InventoryOperations inventoryOperations;
 
     @Autowired
     private UserInput userInput;
 
     public void startMenu() {
-        System.out.println("\n=== Welcome to General Store Inventory System ===");
-
         boolean running = true;
         while (running) {
             displayMainMenu();
-            int choice = userInput.getIntInRange("Enter your choice (1-10): ", 1, 10);
+            int choice = userInput.getIntInRange("Enter your choice: ", 1, 8);
 
             try {
                 switch (choice) {
                     case 1:
-                        inventoryOperations.addNewProduct();
+                        inventoryOperations.addProduct();
                         break;
                     case 2:
-                        inventoryOperations.viewAllProducts();
+                        inventoryOperations.viewProducts();
                         break;
                     case 3:
-                        inventoryOperations.addStockToProduct();
+                        inventoryOperations.searchProduct();
                         break;
                     case 4:
-                        inventoryOperations.removeStockFromProduct();
+                        inventoryOperations.updateProduct();
                         break;
                     case 5:
-                        inventoryOperations.updateProductPrice();
+                        inventoryOperations.deleteProduct();
                         break;
                     case 6:
-                        inventoryOperations.displayProductDetails();
+                        inventoryOperations.saveInventoryToFile();
                         break;
                     case 7:
-                        inventoryOperations.removeProduct();
+                        inventoryOperations.loadInventoryFromFile();
                         break;
                     case 8:
-                        inventoryOperations.searchProducts();
-                        break;
-                    case 9:
-                        inventoryOperations.fileOperations();
-                        break;
-                    case 10:
-                        System.out.println("Thank you for using the Inventory System. Goodbye!");
-                        running = false;
+                        if (confirmExit()) {
+                            System.out.println("Thank you for using Inventory Manager. Goodbye!");
+                            running = false;
+                        }
                         break;
                 }
             } catch (Exception e) {
                 System.out.println("✗ An unexpected error occurred: " + e.getMessage());
                 System.out.println("Please try again.");
+                pressEnterToContinue();
             }
         }
         userInput.closeScanner();
     }
 
     private void displayMainMenu() {
-        System.out.println("\n=== MAIN MENU ===");
-        System.out.println("1. Add New Product");
-        System.out.println("2. View All Products");
-        System.out.println("3. Add Stock to Product");
-        System.out.println("4. Remove Stock from Product");
-        System.out.println("5. Update Product Price");
-        System.out.println("6. Display Product Details");
-        System.out.println("7. Remove Product");
-        System.out.println("8. Search Products");
-        System.out.println("9. File Operations");
-        System.out.println("10. Exit");
+        System.out.println("\n===== Inventory Manager =====");
+        System.out.println("1. Add Product");
+        System.out.println("2. View Products");
+        System.out.println("3. Search Product");
+        System.out.println("4. Update Product");
+        System.out.println("5. Delete Product");
+        System.out.println("6. Save Inventory to File");
+        System.out.println("7. Load Inventory from File");
+        System.out.println("8. Exit");
+    }
+
+    private boolean confirmExit() {
+        return userInput.getConfirmation("Are you sure you want to exit?");
+    }
+
+    public void pressEnterToContinue() {
+        System.out.println("Press Enter to return to the main menu...");
+        userInput.getString("");
     }
 }

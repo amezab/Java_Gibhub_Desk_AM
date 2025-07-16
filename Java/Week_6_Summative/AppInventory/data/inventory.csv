@@ -1,4 +1,7 @@
 Type,ID,Name,Quantity,Price,MinStock,ExpirationDate,DaysBeforeExp
-STANDARD,A1,Milk,70,4.99,5,,
-STANDARD,A2,Eggs,100,8.0,10,,
+PERISHABLE,A1,eggs,54,7.99,5,2026-12-12,60
 STANDARD,A3,Bread,30,2.35,5,,
+STANDARD,A4,Bacon,10,5.66,5,,
+STANDARD,A5,Ham,100,5.54,5,,
+PERISHABLE,A6,Soda,50,7.99,5,2027-12-12,10
+STANDARD,A7,Frozen Waffles,10,3.85,5,,

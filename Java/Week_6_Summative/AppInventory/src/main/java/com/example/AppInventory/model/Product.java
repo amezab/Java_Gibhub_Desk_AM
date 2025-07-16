@@ -1,7 +1,7 @@
 package com.example.AppInventory.model;
 
 import java.util.Objects;
-
+// Core data fields
 public class Product {
     private final String productId;
     private final String productName;
@@ -48,7 +48,7 @@ public class Product {
     public void setMinimumStock(int minimumStock) {
         this.minimumStock = minimumStock;
     }
-
+    // Business logic
     public boolean isLowStock() {
         return quantity <= minimumStock;
     }

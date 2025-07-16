@@ -1,8 +1,8 @@
 package com.example.AppInventory.service;
 
-import com.example.AppInventory.data.FileManager;
 import com.example.AppInventory.model.Product;
 import com.example.AppInventory.exception.ProductNotFoundException;
+import com.example.AppInventory.data.FileManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,8 +20,9 @@ public class InventoryManager {
     @Autowired
     private FileManager fileManager;
 
+    // Runs when Spring creates this object
     @PostConstruct
-    public void loadInventoryOnStartup() {
+    public void loadInventoryOnStartup() { // Automatically loads data from file when app starts
         System.out.println("Loading inventory from file...");
         List<Product> loadedProducts = fileManager.loadInventory();
 
@@ -32,8 +33,8 @@ public class InventoryManager {
         System.out.println("Inventory loaded: " + products.size() + " products");
     }
 
-    @PreDestroy
-    public void saveInventoryOnShutdown() {
+    @PreDestroy // Runs when Spring shuts down this object
+    public void saveInventoryOnShutdown() { // Automatically saves data to file when app closes
         System.out.println("Saving inventory to file...");
         saveInventory();
     }
@@ -61,34 +62,38 @@ public class InventoryManager {
     }
 
     public void addProduct(Product product) {
+        // 1. Validate product isn't null
         if (product == null) {
             throw new IllegalArgumentException("Product cannot be null");
         }
 
         String productId = product.getProductId();
-
+        // 2. Check ID isn't empty
         if (productId == null || productId.trim().isEmpty()) {
             throw new IllegalArgumentException("Product ID cannot be null or empty.");
         }
-
+        // 3. Check ID doesn't already exist
         if (products.containsKey(productId)) {
             throw new IllegalArgumentException("Product with ID " + productId + " already exists");
         }
-
+        // 4. Add to HashMap
         products.put(productId, product);
         System.out.println("Product added successfully: " + product);
+        // 5. Auto-save to file
         saveInventory();
     }
 
     public Product getProduct(String productId) {
+        // 1. Validate ID isn't empty
         if (productId == null || productId.trim().isEmpty()) {
             throw new IllegalArgumentException("Product ID cannot be null or empty.");
         }
-
+        // 2. Check if exists in HashMap
         if (!products.containsKey(productId)) {
+            //3. If not found throw ProductNotFoundException
             throw new ProductNotFoundException("Product with ID " + productId + " not found");
         }
-
+        //4. Return the product
         return products.get(productId);
     }
 
@@ -96,7 +101,7 @@ public class InventoryManager {
         return new ArrayList<>(products.values());
     }
 
-    public boolean removeProduct(String productId) {
+    public void removeProduct(String productId) {
         if (productId == null || productId.trim().isEmpty()) {
             throw new IllegalArgumentException("Product ID cannot be null or empty.");
         }
@@ -108,7 +113,6 @@ public class InventoryManager {
         products.remove(productId);
         System.out.println("Product removed successfully: " + productId);
         saveInventory();
-        return true;
     }
 
     public boolean hasProduct(String productId) {
@@ -138,14 +142,6 @@ public class InventoryManager {
         System.out.println("Product quantity updated successfully: " + product);
         saveInventory();
         return true;
-    }
-
-    public boolean createBackup() {
-        return fileManager.createBackup();
-    }
-
-    public String getInventoryFilePath() {
-        return fileManager.getInventoryFilePath();
     }
 
     public boolean inventoryFileExists() {

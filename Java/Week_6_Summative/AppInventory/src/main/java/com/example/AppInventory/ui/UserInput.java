@@ -48,13 +48,13 @@ public class UserInput {
 
     public boolean getConfirmation(String prompt) {
         while (true) {
-            String input = getString(prompt + " (y/n): ").toLowerCase();
+            String input = getString(prompt + " (Y/N): ").toLowerCase();
             if (input.equals("y") || input.equals("yes")) {
                 return true;
             } else if (input.equals("n") || input.equals("no")) {
                 return false;
             } else {
-                System.out.println("✗ Please enter 'y' for yes or 'n' for no.");
+                System.out.println("✗ Please enter 'Y' for yes or 'N' for no.");
             }
         }
     }
@@ -86,6 +86,38 @@ public class UserInput {
                 return value;
             }
             System.out.println("✗ Please enter a positive number.");
+        }
+    }
+
+    // Get optional input (allows Enter to skip)
+    public String getOptionalString(String prompt) {
+        System.out.print(prompt);
+        return scanner.nextLine().trim();
+    }
+
+    public Integer getOptionalInt(String prompt) {
+        String input = getOptionalString(prompt);
+        if (input.isEmpty()) {
+            return null;
+        }
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            System.out.println("✗ Invalid number format. Skipping update.");
+            return null;
+        }
+    }
+
+    public Double getOptionalDouble(String prompt) {
+        String input = getOptionalString(prompt);
+        if (input.isEmpty()) {
+            return null;
+        }
+        try {
+            return Double.parseDouble(input);
+        } catch (NumberFormatException e) {
+            System.out.println("✗ Invalid number format. Skipping update.");
+            return null;
         }
     }
 
