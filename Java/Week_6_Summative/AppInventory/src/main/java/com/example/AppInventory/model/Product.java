@@ -48,11 +48,13 @@ public class Product {
     public void setMinimumStock(int minimumStock) {
         this.minimumStock = minimumStock;
     }
-    // Business logic
+
+    // Business logic, determines if product needs reordering
     public boolean isLowStock() {
         return quantity <= minimumStock;
     }
 
+    // for comparing based on data and no memory location
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -63,15 +65,17 @@ public class Product {
                 Objects.equals(productId, product.productId) &&
                 Objects.equals(productName, product.productName);
     }
-
+    //Generates hash code for efficient storage in Sets/Maps
     @Override
     public int hashCode() {
         return Objects.hash(productId, productName, quantity, price, minimumStock);
     }
 
+    //Allows us to see a summary w/o using each getter individually
     @Override
     public String toString() {
-        return String.format("Product{ID='%s', Name='%s', Quantity=%d, Price=$%.2f, MinStock=%d}",
-                productId, productName, quantity, price, minimumStock);
+        return String.format("Product: %s (ID: %s)\n" +
+                        "  Stock: %d units | Unit Price: $%.2f | Min Stock: %d",
+                productName, productId, quantity, price, minimumStock);
     }
 }

@@ -34,7 +34,7 @@ public class InventoryOperations {
         userInput.getString("");
     }
 
-    // 1. Add Product
+
     // 1. Add Product
     public void addProduct() {
         System.out.println("\n===== Add Product =====");
@@ -52,7 +52,7 @@ public class InventoryOperations {
             int quantity = userInput.getPositiveInt("Enter Quantity: ");
             double price = userInput.getPositiveDouble("Enter Price: ");
 
-            // NEW: Ask if it's a perishable product
+            // Ask if it's a perishable product
             boolean isPerishable = userInput.getConfirmation("Is this a perishable product?");
 
             Product newProduct;
@@ -102,7 +102,7 @@ public class InventoryOperations {
         } else {
             // Updated header to include expiration info
             System.out.printf("%-10s | %-20s | %-10s | %-10s | %-15s%n",
-                    "ID", "Name", "Quantity", "Price", "Expiration");
+                    "ID", "Name", "Quantity", "Unit  Price", "Expiration");
             System.out.println("-".repeat(75));
 
             for (Product product : products) {
@@ -163,15 +163,19 @@ public class InventoryOperations {
         pressEnterToContinue();
     }
 
+    //
     private void displayProductDetails(Product product) {
-        System.out.println("Product Found:");
-        System.out.println("ID: " + product.getProductId());
-        System.out.println("Name: " + product.getProductName());
-        System.out.println("Quantity: " + product.getQuantity());
-        System.out.println("Price: $" + String.format("%.2f", product.getPrice()));
+        productService.displayProductInfo(product);
+
+        double totalValue = productService.calculateTotalValue(product);
+        System.out.println("Total Inventory Value: $" + String.format("%.2f", totalValue));
+
+        if (productService.needsRestocking(product)) {
+            System.out.println("RESTOCK NEEDED!");
+        }
     }
 
-    // 4. Update Product
+
     // 4. Update Product
     public void updateProduct() {
         System.out.println("\n===== Update Product =====");
@@ -187,8 +191,7 @@ public class InventoryOperations {
             System.out.println("Price: $" + String.format("%.2f", product.getPrice()));
 
             // Show expiration info if it's a perishable product
-            if (product instanceof PerishableProduct) {
-                PerishableProduct perishable = (PerishableProduct) product;
+            if (product instanceof PerishableProduct perishable) {
                 System.out.println("Expiration Date: " + perishable.getExpirationDate());
                 System.out.println("Days Before Expiration Warning: " + perishable.getDaysBeforeExpiration());
                 System.out.println("Current Status: " + perishable.getExpirationStatus());
@@ -202,12 +205,18 @@ public class InventoryOperations {
 
             // Update basic fields
             if (newQuantity != null && newQuantity >= 0) {
-                product.setQuantity(newQuantity);
-                updated = true;
+                int currentQty = product.getQuantity();
+                int difference = newQuantity - currentQty;
+                if (difference > 0) {
+                    productService.addStock(product, difference);
+                } else if (difference < 0) {
+                    productService.removeStock(product, Math.abs(difference));
+                }
             }
 
+            //
             if (newPrice != null && newPrice >= 0) {
-                product.setPrice(newPrice);
+                productService.updatePrice(product, newPrice);
                 updated = true;
             }
 

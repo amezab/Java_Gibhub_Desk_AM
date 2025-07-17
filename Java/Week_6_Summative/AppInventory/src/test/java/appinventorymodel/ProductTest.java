@@ -1,5 +1,6 @@
-package com.example.AppInventory.model;
+package appinventorymodel;
 
+import com.example.AppInventory.model.Product;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -14,21 +14,16 @@ public class PerishableProduct extends Product {
                              int daysBeforeExpiration) {
         super(productId, productName, quantity, price, minimumStock);
 
-        if (expirationDate == null) {
-            throw new IllegalArgumentException("Expiration date cannot be null");
-        }
-        if (daysBeforeExpiration < 0) {
-            throw new IllegalArgumentException("Days before expiration cannot be negative");
-        }
-
         this.expirationDate = expirationDate;
         this.daysBeforeExpiration = daysBeforeExpiration;
     }
 
+    //gets expiration date
     public LocalDate getExpirationDate() {
         return expirationDate;
     }
 
+    //updates the exp date for batch updated
     public void setExpirationDate(LocalDate expirationDate) {
         if (expirationDate == null) {
             throw new IllegalArgumentException("Expiration date cannot be null");
@@ -36,31 +31,37 @@ public class PerishableProduct extends Product {
         this.expirationDate = expirationDate;
     }
 
+    //Warning
     public int getDaysBeforeExpiration() {
         return daysBeforeExpiration;
     }
 
+    //updates the warning threshold
     public void setDaysBeforeExpiration(int daysBeforeExpiration) {
         if (daysBeforeExpiration < 0) {
             throw new IllegalArgumentException("Days before expiration cannot be negative");
         }
         this.daysBeforeExpiration = daysBeforeExpiration;
     }
-
+    //calculates days till experitation
     public long getDaysUntilExpiration() {
+        //it helps calculate the days between two dates, in this case till now
         return ChronoUnit.DAYS.between(LocalDate.now(), expirationDate);
     }
 
+    //checks if product is expired
     public boolean isExpired() {
         return LocalDate.now().isAfter(expirationDate);
     }
 
+    //Checks if product is near exp, i could put on sale
     public boolean isNearExpiration() {
         long daysUntil = getDaysUntilExpiration();
         return daysUntil <= daysBeforeExpiration && daysUntil >= 0;
     }
 
-    public String getExpirationStatus() {
+    //provides expiration status, readable
+        public String getExpirationStatus() {
         if (isExpired()) {
             return "EXPIRED";
         } else if (isNearExpiration()) {
@@ -76,27 +77,14 @@ public class PerishableProduct extends Product {
         return super.isLowStock() || isNearExpiration() || isExpired();
     }
 
+    //string representation including expiration info
     @Override
     public String toString() {
-        return String.format("PerishableProduct{ID='%s', Name='%s', Quantity=%d, Price=$%.2f, " +
+        return String.format("PerishableProduct{ID='%s', Name='%s', Quantity=%d, Unit Price=$%.2f, " +
                         "MinStock=%d, ExpirationDate=%s, Status=%s}",
                 getProductId(), getProductName(), getQuantity(), getPrice(),
                 getMinimumStock(), expirationDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
                 getExpirationStatus());
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        PerishableProduct that = (PerishableProduct) o;
-        return daysBeforeExpiration == that.daysBeforeExpiration &&
-                Objects.equals(expirationDate, that.expirationDate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), expirationDate, daysBeforeExpiration);
-    }
 }

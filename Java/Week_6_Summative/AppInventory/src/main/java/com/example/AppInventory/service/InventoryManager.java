@@ -15,7 +15,7 @@ import java.util.Map;
 
 @Service
 public class InventoryManager {
-    private Map<String, Product> products = new HashMap<>();
+    private final Map<String, Product> products = new HashMap<>();
 
     @Autowired
     private FileManager fileManager;
@@ -38,7 +38,7 @@ public class InventoryManager {
         System.out.println("Saving inventory to file...");
         saveInventory();
     }
-
+    //Converts HP to list and passes to FM and confirms if saved success
     public boolean saveInventory() {
         List<Product> productList = new ArrayList<>(products.values());
         return fileManager.saveInventory(productList);
@@ -47,7 +47,7 @@ public class InventoryManager {
     public boolean loadInventory() {
         try {
             List<Product> loadedProducts = fileManager.loadInventory();
-
+            //  ensures my in-memory inventory is an exact reflection of what's in the file.
             products.clear();
             for (Product product : loadedProducts) {
                 products.put(product.getProductId(), product);
@@ -60,43 +60,42 @@ public class InventoryManager {
             return false;
         }
     }
-
+    //Core CRUD Operations
     public void addProduct(Product product) {
-        // 1. Validate product isn't null
         if (product == null) {
             throw new IllegalArgumentException("Product cannot be null");
         }
 
         String productId = product.getProductId();
-        // 2. Check ID isn't empty
+        //checks for null and empty
         if (productId == null || productId.trim().isEmpty()) {
             throw new IllegalArgumentException("Product ID cannot be null or empty.");
         }
-        // 3. Check ID doesn't already exist
+        //  Check ID doesn't already exist
         if (products.containsKey(productId)) {
             throw new IllegalArgumentException("Product with ID " + productId + " already exists");
         }
-        // 4. Add to HashMap
+        //  Add to HashMap
         products.put(productId, product);
         System.out.println("Product added successfully: " + product);
-        // 5. Auto-save to file
+        //  Auto-save to file
         saveInventory();
     }
-
+    //Retrieves a specific product by ID
     public Product getProduct(String productId) {
-        // 1. Validate ID isn't empty
+
         if (productId == null || productId.trim().isEmpty()) {
             throw new IllegalArgumentException("Product ID cannot be null or empty.");
         }
-        // 2. Check if exists in HashMap
+        //  Check if exists in HashMap
         if (!products.containsKey(productId)) {
             //3. If not found throw ProductNotFoundException
             throw new ProductNotFoundException("Product with ID " + productId + " not found");
         }
-        //4. Return the product
+        // Return the product
         return products.get(productId);
     }
-
+    //Converts HashMap values to List of Product objects and prevents external modification
     public List<Product> getAllProducts() {
         return new ArrayList<>(products.values());
     }
@@ -115,14 +114,17 @@ public class InventoryManager {
         saveInventory();
     }
 
+    //Safely checks if product exists
     public boolean hasProduct(String productId) {
         return productId != null && !productId.trim().isEmpty() && products.containsKey(productId);
     }
 
+    //report
     public int getTotalProducts() {
         return products.size();
     }
 
+    //Updates only the quantity field of a specific product
     public boolean updateProductQuantity(String productId, int newQuantity) {
         if (productId == null || productId.trim().isEmpty()) {
             throw new IllegalArgumentException("Product ID cannot be null or empty.");
@@ -143,7 +145,7 @@ public class InventoryManager {
         saveInventory();
         return true;
     }
-
+    //Manually saves current inventory to file
     public boolean inventoryFileExists() {
         return fileManager.inventoryFileExists();
     }
